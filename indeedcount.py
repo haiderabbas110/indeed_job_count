@@ -11,7 +11,7 @@ try:
     options = webdriver.ChromeOptions()
     options.add_argument("--log-level=3")  # Set the log level to suppress warnings and errors
     driver = webdriver.Chrome(service=service, options=options)
-    driver.get('file:///E:/Freelance/upwork/Ted/indeedcount/My jobs _ Indeed.html')
+    driver.get('file:///C:/xampp/htdocs/indeed_job_count/downloaded-jobs/My jobs _ Indeed.html')
     #driver.get('https://myjobs.indeed.com/applied')
 
 except Exception as e:
