@@ -23,26 +23,21 @@ earliest_date = datetime.now()
 while True:
     get_date = input('Please Enter Date ')
 
-    application_entries = driver.find_elements(
-        By.XPATH, "//div[contains(@class, 'atw-AppCard-mainContainer')]")
-
-    jobs_per_day = defaultdict(int)
-
     div_elements = driver.find_elements(
         By.XPATH, "//span[contains(@class, 'atw-AppCardJobInfo-userJobStatus')]")
 
-    job_count = len(application_entries)
     text_counts = {}
     total_jobs = 0
     date_found = False
 
     for div_element in div_elements:
         text = div_element.text
-
+        
         if text in text_counts:
             text_counts[text] += 1
         else:
             text_counts[text] = 1
+
 
         if get_date in text:
             date_found = True
